@@ -65,7 +65,7 @@ public class PriceFormatterServiceImpl extends PriceFormatterService {
             formattedWithCurrency = formattedNumber + "$";
         }
 
-        return formattedWithCurrency.replaceAll("\\s+", ",");
+        return formattedWithCurrency;
     }
 
     private static Number formatValue(Double value) {
