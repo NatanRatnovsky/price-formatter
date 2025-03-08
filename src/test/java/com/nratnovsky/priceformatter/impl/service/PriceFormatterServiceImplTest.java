@@ -24,8 +24,8 @@ class PriceFormatterServiceImplTest {
 
         assertInstanceOf(Double.class, response.getValue());
         assertEquals(20.02, response.getValue());
-        assertEquals("₪20,02", response.getFormattedWithCurrency());
-        assertEquals("20,02", response.getFormattedWithoutCurrency());
+        assertEquals("₪20.02", response.getFormattedWithCurrency());
+        assertEquals("20.02", response.getFormattedWithoutCurrency());
         assertEquals(16.823529411764707, response.getNetPrice());
         assertEquals(3.196470588235293, response.getVatAmount());
     }
@@ -36,11 +36,11 @@ class PriceFormatterServiceImplTest {
         var response = service.formatPrice(request);
 
         assertInstanceOf(Integer.class, response.getValue());
-        assertEquals(10, response.getValue());
-        assertEquals("10$", response.getFormattedWithCurrency());
-        assertEquals("10", response.getFormattedWithoutCurrency());
-        assertEquals(8.403361344537815, response.getNetPrice());
-        assertEquals(1.5966386554621845, response.getVatAmount());
+        assertEquals(100000, response.getValue());
+        assertEquals("100,000$", response.getFormattedWithCurrency());
+        assertEquals("100,000", response.getFormattedWithoutCurrency());
+        assertEquals(84033.61344537816, response.getNetPrice());
+        assertEquals(15966.386554621844, response.getVatAmount());
     }
 
     @Test
@@ -52,7 +52,7 @@ class PriceFormatterServiceImplTest {
     }
 
     private PriceRequest getPriceRequestWithUsdCurrency() {
-        return new PriceRequest("1000", "USD");
+        return new PriceRequest("10000000", "USD");
     }
 
     private PriceRequest getPriceRequestWithIlsCurrency() {
