@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(PriceFormatterController.class)
-@ExtendWith(org.mockito.junit.jupiter.MockitoExtension.class) // Enables Mockito in JUnit 5
+@ExtendWith(org.mockito.junit.jupiter.MockitoExtension.class)
 class PriceFormatterControllerTest {
 
     @Autowired
